@@ -1,0 +1,52 @@
+{
+    "path/To/folderName": { // Configuration item is a folder -> Whole path to the configuration item
+        "name": "<folderName>", // Name of the folder
+        "path": "<path/To>/<folderName>", // Whole path to the configuration item
+        "type": "folder",
+        "configItemType": "<configItemType>",
+        "baselineType": "<baselineType>",
+        "lifeCycleType": "<lifeCycleType>",
+        "responsible": {
+            "type": "role",
+            "name": "<roleName>"
+        },
+        "relationships": {
+            "higher": [
+                "path/To/secondCI",
+                "path/To/thirdCI"
+            ],
+            "lower": [
+                "path/To/fourthCI"
+            ]
+        }
+    },
+    "<filePath>/<secondCIName>.<extension>": { // Configuration item is a file -> Whole path to the configuration item with file extension
+        "name": "<secondCIName>.<extension>", // For configuration items that are files it is important to also specify the file extension
+        "path": "<filePath>/<secondCIName>.<extension>", // Whole path to the configuration item
+        "type": "file",
+        "configItemType": "<configItemType>",
+        "baselineType": "<baselineType>",
+        "lifeCycleType": "<lifeCycleType>",
+        "responsible": {
+            "type": "person",
+            "name": "<responsibleOwnerName>",
+            "email": "<emailAddress>",
+            "phone": "<phoneNumber>"
+        },
+        "relationships": {
+            "higher": [],
+            "lower": [
+                "path/To/thirdCI",
+                ...
+            ]
+        }
+    },
+    ...
+}
+ 
+With:
+<configItemType> → CM-Plan | Sourcecode | Unit Test Case Specification // These are just examples and has to be adapted to the project specific definition
+ 
+<baselineType> → Sprint End | Requirements Freeze // These are just examples and has to be adapted to the project specific definition
+ 
+<lifeCycleType> → A | B | C
